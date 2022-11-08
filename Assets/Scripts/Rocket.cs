@@ -141,6 +141,11 @@ public class Rocket : MonoBehaviour
             lvl = 4;
             LoadOtherScene();
         }
+        else if (Input.GetKey(KeyCode.N))
+        {
+            lvl = 5;
+            LoadOtherScene();
+        }
     }
 
     void LoadNextLvl()
