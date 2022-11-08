@@ -14,6 +14,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem finishPr;
     [SerializeField] ParticleSystem flyPr;
     [SerializeField] ParticleSystem deathPr;
+    bool God = false;
     Rigidbody rigidBody; // создаём переменую для использовнание RigidBody
     AudioSource audiosource; // создаём для audiosource
 
@@ -36,8 +37,12 @@ public class Rocket : MonoBehaviour
         {
             Launch();
             Rotation();
-            CheatsKey();
             KeyExit();
+        }
+        if (Debug.isDebugBuild)
+        {
+            DebugKeys();
+            CheatsKey();
         }
     }
     void Launch()
@@ -73,7 +78,7 @@ public class Rocket : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(state != State.Play)
+        if(state != State.Play|| God)
         {
             return;
         }
@@ -146,6 +151,17 @@ public class Rocket : MonoBehaviour
         {
             lvl = 5;
             LoadOtherScene();
+        }
+    }
+
+    void DebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L)) {
+            LoadNextLvl();
+        }
+        else if (Input.GetKeyDown(KeyCode.G))
+        {
+            God = !God;
         }
     }
 
