@@ -37,6 +37,7 @@ public class Rocket : MonoBehaviour
             Launch();
             Rotation();
             CheatsKey();
+            KeyExit();
         }
     }
     void Launch()
@@ -145,6 +146,14 @@ public class Rocket : MonoBehaviour
         {
             lvl = 5;
             LoadOtherScene();
+        }
+    }
+
+    void KeyExit()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 
