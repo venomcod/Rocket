@@ -7,7 +7,7 @@ public class Rocket : MonoBehaviour
 {
     [SerializeField] float rotSpeed = 100f;
     [SerializeField] float flySpeed = 100f;
-    int lvl = 0;
+    [SerializeField] int lvl = 0;
     [SerializeField] AudioClip flySnd;
     [SerializeField] AudioClip finishSnd;
     [SerializeField] AudioClip deathSnd;
