@@ -84,10 +84,10 @@ public class Rocket : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                print("Скучно");
+                print("Ok");
                 break;
             case "Bonus":
-                print("Вкинулся");
+                print("PowerUp");
                 break;
             case "Finish":
                 Finish();
@@ -101,7 +101,7 @@ public class Rocket : MonoBehaviour
 
     void Death()
     {
-        print("Не везёт");
+        print("Death");
         state = State.Dead;
         audiosource.Stop();
         audiosource.PlayOneShot(deathSnd);
@@ -111,7 +111,7 @@ public class Rocket : MonoBehaviour
 
     void Finish()
     {
-        print("Ура победа!");
+        print("Win");
         state = State.Next;
         audiosource.Stop();
         audiosource.PlayOneShot(finishSnd);
