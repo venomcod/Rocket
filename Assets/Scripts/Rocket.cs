@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour
 {
+    [SerializeField] Text energyText;
+    [SerializeField] int energy = 2000;
+    [SerializeField] int energyApply = 5;
     [SerializeField] float rotSpeed = 100f;
     [SerializeField] float flySpeed = 100f;
     [SerializeField] AudioClip flySnd;
@@ -24,6 +28,7 @@ public class Rocket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        energyText.text = energy.ToString();
         state = State.Play;
         audiosource = GetComponent<AudioSource>(); // получаем компонет из обьекта и добовляем в переменую
         rigidBody = GetComponent<Rigidbody>(); // тож самое
@@ -45,8 +50,11 @@ public class Rocket : MonoBehaviour
     }
     void Launch()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && energy > 0)
         {
+            energy -= Mathf.RoundToInt(energyApply*Time.deltaTime);
+            energyText.text = energy.ToString();
+            print(energy);
             rigidBody.AddRelativeForce(Vector3.up * flySpeed * Time.deltaTime);
             if (audiosource.isPlaying == false)
                 audiosource.PlayOneShot(flySnd);
@@ -87,7 +95,7 @@ public class Rocket : MonoBehaviour
                 print("Ok");
                 break;
             case "Bonus":
-                print("PowerUp");
+                GetEnergy(1000, collision.gameObject);
                 break;
             case "Finish":
                 Finish();
@@ -97,6 +105,14 @@ public class Rocket : MonoBehaviour
                 break;
 
         }
+    }
+
+    void GetEnergy(int energyToAdd, GameObject batteryObj)
+    {
+        batteryObj.GetComponent<BoxCollider>().enabled = false;
+        energy += energyToAdd;
+        energyText.text = energy.ToString();
+        Destroy(batteryObj);
     }
 
     void Death()
