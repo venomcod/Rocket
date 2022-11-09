@@ -7,7 +7,6 @@ public class Rocket : MonoBehaviour
 {
     [SerializeField] float rotSpeed = 100f;
     [SerializeField] float flySpeed = 100f;
-    [SerializeField] int lvl = 0;
     [SerializeField] AudioClip flySnd;
     [SerializeField] AudioClip finishSnd;
     [SerializeField] AudioClip deathSnd;
@@ -18,7 +17,7 @@ public class Rocket : MonoBehaviour
     Rigidbody rigidBody; // создаём переменую для использовнание RigidBody
     AudioSource audiosource; // создаём для audiosource
 
-    enum State {Play,Dead,Next};
+    enum State { Play, Dead, Next };
     State state = State.Play;
 
 
@@ -33,7 +32,7 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(state == State.Play)
+        if (state == State.Play)
         {
             Launch();
             Rotation();
@@ -42,14 +41,13 @@ public class Rocket : MonoBehaviour
         if (Debug.isDebugBuild)
         {
             DebugKeys();
-            CheatsKey();
         }
     }
     void Launch()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidBody.AddRelativeForce(Vector3.up*flySpeed*Time.deltaTime);
+            rigidBody.AddRelativeForce(Vector3.up * flySpeed * Time.deltaTime);
             if (audiosource.isPlaying == false)
                 audiosource.PlayOneShot(flySnd);
             flyPr.Play();
@@ -71,14 +69,14 @@ public class Rocket : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.forward *roationSpeed);
+            transform.Rotate(-Vector3.forward * roationSpeed);
         }
         rigidBody.freezeRotation = false;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if(state != State.Play|| God)
+        if (state != State.Play || God)
         {
             return;
         }
@@ -97,7 +95,7 @@ public class Rocket : MonoBehaviour
             default:
                 Death();
                 break;
-                
+
         }
     }
 
@@ -120,43 +118,12 @@ public class Rocket : MonoBehaviour
         finishPr.Play();
         Invoke("LoadNextLvl", 2f);
     }
-    void CheatsKey()
-    {
-        if (Input.GetKey(KeyCode.Z))
-        {
-            lvl = 0;
-            LoadOtherScene();
-        }
-        else if (Input.GetKey(KeyCode.X))
-        {
-            lvl = 1;
-            LoadOtherScene();
-        }
-        else if (Input.GetKey(KeyCode.C))
-        {
-            lvl = 2;
-            LoadOtherScene();
-        }
-        else if (Input.GetKey(KeyCode.V))
-        {
-            lvl = 3;
-            LoadOtherScene();
-        }
-        else if (Input.GetKey(KeyCode.B))
-        {
-            lvl = 4;
-            LoadOtherScene();
-        }
-        else if (Input.GetKey(KeyCode.N))
-        {
-            lvl = 5;
-            LoadOtherScene();
-        }
-    }
+
 
     void DebugKeys()
     {
-        if (Input.GetKeyDown(KeyCode.L)) {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
             LoadNextLvl();
         }
         else if (Input.GetKeyDown(KeyCode.G))
@@ -175,17 +142,21 @@ public class Rocket : MonoBehaviour
 
     void LoadNextLvl()
     {
-        SceneManager.LoadScene(1);
+        int currentLvlIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextLvlIndex = currentLvlIndex + 1;
+
+        if (nextLvlIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextLvlIndex = 0;
+        }
+
+        SceneManager.LoadScene(nextLvlIndex);
     }
 
     void LoadFirstLvl()
     {
         SceneManager.LoadScene(0);
     }
+}
 
-    void LoadOtherScene()
-    {
-        SceneManager.LoadScene(lvl);
-    }
- }
 
