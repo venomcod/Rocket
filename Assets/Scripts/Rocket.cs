@@ -147,7 +147,7 @@ public class Rocket : MonoBehaviour
 
         if (nextLvlIndex == SceneManager.sceneCountInBuildSettings)
         {
-            nextLvlIndex = 0;
+            nextLvlIndex = 1;
         }
 
         SceneManager.LoadScene(nextLvlIndex);
@@ -155,7 +155,7 @@ public class Rocket : MonoBehaviour
 
     void LoadFirstLvl()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
 
