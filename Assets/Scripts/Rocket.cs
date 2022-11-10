@@ -55,7 +55,6 @@ public class Rocket : MonoBehaviour
         {
             energy -= Mathf.RoundToInt(energyApply*Time.deltaTime);
             energyText.text = energy.ToString();
-            print(energy);
             rigidBody.AddRelativeForce(Vector3.up * flySpeed * Time.deltaTime);
             if (audiosource.isPlaying == false)
                 audiosource.PlayOneShot(flySnd);
