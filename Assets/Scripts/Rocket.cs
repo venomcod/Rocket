@@ -8,6 +8,7 @@ public class Rocket : MonoBehaviour
 {
     [SerializeField] Text energyText;
     [SerializeField] int energy = 2000;
+    [SerializeField] int energytoAdd = 1000;
     [SerializeField] int energyApply = 5;
     [SerializeField] float rotSpeed = 100f;
     [SerializeField] float flySpeed = 100f;
@@ -95,7 +96,7 @@ public class Rocket : MonoBehaviour
                 print("Ok");
                 break;
             case "Bonus":
-                GetEnergy(1000, collision.gameObject);
+                GetEnergy(energytoAdd, collision.gameObject);
                 break;
             case "Finish":
                 Finish();

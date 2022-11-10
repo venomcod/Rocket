@@ -263,6 +263,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5bb57ce1a376a4c8e02d72973358be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyText: {fileID: 0}
+  energy: 2000
+  energyApply: 50
   rotSpeed: 150
   flySpeed: 3000
   flySnd: {fileID: 8300000, guid: 0816bbd25d2a7434aa43c03242651fa2, type: 3}
