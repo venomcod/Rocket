@@ -18,6 +18,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem finishPr;
     [SerializeField] ParticleSystem flyPr;
     [SerializeField] ParticleSystem deathPr;
+    [SerializeField] int lvlSave;
     bool God = false;
     Rigidbody rigidBody; // создаём переменую для использовнание RigidBody
     AudioSource audiosource; // создаём для audiosource
@@ -48,6 +49,7 @@ public class Rocket : MonoBehaviour
         {
             DebugKeys();
         }
+        TestProggres();
     }
     void Launch()
     {
@@ -160,6 +162,8 @@ public class Rocket : MonoBehaviour
     {
         int currentLvlIndex = SceneManager.GetActiveScene().buildIndex;
         int nextLvlIndex = currentLvlIndex + 1;
+        lvlSave = nextLvlIndex;
+        SaveProggres();
 
         if (nextLvlIndex == SceneManager.sceneCountInBuildSettings)
         {
@@ -172,6 +176,19 @@ public class Rocket : MonoBehaviour
     void LoadFirstLvl()
     {
         SceneManager.LoadScene(1);
+    }
+
+    void SaveProggres()
+    {
+        PlayerPrefs.SetInt("SaveLvl", lvlSave);
+    }
+
+    void TestProggres()
+    {
+        if (Input.GetKeyDown(KeyCode.CapsLock))
+        {
+            print(PlayerPrefs.GetInt("SaveLvl"));
+        }
     }
 }
 

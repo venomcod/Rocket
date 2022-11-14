@@ -265,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyText: {fileID: 0}
   energy: 2000
+  energytoAdd: 1000
   energyApply: 50
   rotSpeed: 150
   flySpeed: 3000
@@ -274,6 +275,7 @@ MonoBehaviour:
   finishPr: {fileID: 4737295968690991107}
   flyPr: {fileID: 7000617409288712396}
   deathPr: {fileID: 3345135530294641381}
+  lvlSave: 0
 --- !u!82 &4510284144806897421
 AudioSource:
   m_ObjectHideFlags: 0
