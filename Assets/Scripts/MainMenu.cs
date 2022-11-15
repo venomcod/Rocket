@@ -8,11 +8,19 @@ public class MainMenu : MonoBehaviour
 {
     int LoadLvl;
     [SerializeField] Text loadtext;
+    [SerializeField] GameObject ModeText;
+    [SerializeField] GameObject ModeText1;
+    [SerializeField] GameObject MainText1;
+    [SerializeField] GameObject MainText2;
+    [SerializeField] GameObject MainText3;
+    bool ModeTextOn = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        ModeText.SetActive(false);
+        ModeText1.SetActive(false);
         HideLoadText();
         LoadLvl = PlayerPrefs.GetInt("SaveLvl");
     }
@@ -22,17 +30,25 @@ public class MainMenu : MonoBehaviour
     {
         ControlMenu();
         LoadProggres();
+        SetGameMode();
     }
 
     void ControlMenu()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(1);
+            StartNewGame();
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            if(ModeTextOn == true)
+            {
+                CloseGameMode();
+            }
+            else
+            {
+                Application.Quit();
+            }
         }
     }
 
@@ -52,5 +68,39 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    void StartNewGame()
+    {
+        ModeTextOn = true;
+        ModeText.SetActive(true);
+        ModeText1.SetActive(true);
+        MainText1.SetActive(false);
+        MainText2.SetActive(false);
+        MainText3.SetActive(false);
+    }
+    void SetGameMode()
+    {
+        if(ModeTextOn == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Y))
+            {
+                PlayerPrefs.SetInt("GameMode", 1);
+                SceneManager.LoadScene(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.N))
+            {
+                PlayerPrefs.SetInt("GameMode", 0);
+                SceneManager.LoadScene(1);
+            }
+        }
+    }
 
+    void CloseGameMode()
+    {
+        ModeTextOn = false;
+        ModeText.SetActive(false);
+        ModeText1.SetActive(false);
+        MainText1.SetActive(true);
+        MainText2.SetActive(true);
+        MainText3.SetActive(true);
+    }
 }

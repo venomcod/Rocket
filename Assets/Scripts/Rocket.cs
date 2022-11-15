@@ -19,6 +19,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem flyPr;
     [SerializeField] ParticleSystem deathPr;
     [SerializeField] int lvlSave;
+    int HardMode;
     bool God = false;
     Rigidbody rigidBody; // создаём переменую для использовнание RigidBody
     AudioSource audiosource; // создаём для audiosource
@@ -30,6 +31,7 @@ public class Rocket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HardMode = PlayerPrefs.GetInt("GameMode");
         energyText.text = energy.ToString();
         state = State.Play;
         audiosource = GetComponent<AudioSource>(); // получаем компонет из обьекта и добовляем в переменую
@@ -49,7 +51,6 @@ public class Rocket : MonoBehaviour
         {
             DebugKeys();
         }
-        TestProggres();
     }
     void Launch()
     {
@@ -175,20 +176,24 @@ public class Rocket : MonoBehaviour
 
     void LoadFirstLvl()
     {
-        SceneManager.LoadScene(1);
+        int lvlDeath;
+
+        lvlDeath = SceneManager.GetActiveScene().buildIndex;
+
+        if(HardMode == 1)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(lvlDeath);
+        }
     }
 
     void SaveProggres()
     {
         PlayerPrefs.SetInt("SaveLvl", lvlSave);
-    }
-
-    void TestProggres()
-    {
-        if (Input.GetKeyDown(KeyCode.CapsLock))
-        {
-            print(PlayerPrefs.GetInt("SaveLvl"));
-        }
+        PlayerPrefs.SetInt("GameMode", HardMode);
     }
 }
 

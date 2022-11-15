@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Friendly
   - Bonus
+  - MainText
   layers:
   - Default
   - TransparentFX
