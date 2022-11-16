@@ -84,6 +84,7 @@ public class MainMenu : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Y))
             {
                 PlayerPrefs.SetInt("GameMode", 1);
+                PlayerPrefs.DeleteKey("SaveLvl");
                 SceneManager.LoadScene(1);
             }
             else if (Input.GetKeyDown(KeyCode.N))
