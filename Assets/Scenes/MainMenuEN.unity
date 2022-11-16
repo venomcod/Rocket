@@ -753,8 +753,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -230}
-  m_SizeDelta: {x: 831.069, y: 59.606018}
+  m_AnchoredPosition: {x: 0, y: -307.41364}
+  m_SizeDelta: {x: 831.069, y: 54.4888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &447980349
 MonoBehaviour:
@@ -789,8 +789,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \"Shift\" \u0447\u0442\u043E\u0431\u044B
-    \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+  m_Text: 'Press "Shift" to continue
+
+'
 --- !u!222 &447980350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -834,7 +835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -235.04999, y: 110.149994}
+  m_AnchoredPosition: {x: -235.05, y: 41}
   m_SizeDelta: {x: 470.09583, y: 220.3066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &490595312
@@ -870,9 +871,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435:\n\u041F\u0420\u041E\u0411\u0415\u041B
-    - \u0412\u0437\u043B\u0451\u0442\nA D - \u041F\u043E\u0432\u043E\u0440\u043E\u0442\nEsc
-    - \u0412\u044B\u0439\u0442\u0438"
+  m_Text: 'SPACE - Up
+
+    A D - Rotate
+
+    Esc - Exit'
 --- !u!222 &490595313
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1360,8 +1363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -117}
-  m_SizeDelta: {x: 995.7651, y: 59.606}
+  m_AnchoredPosition: {x: 0, y: -115.259155}
+  m_SizeDelta: {x: 995.7651, y: 56.1245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034956014
 MonoBehaviour:
@@ -1396,9 +1399,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \"\u041F\u0440\u043E\u0431\u0435\u043B\"
-    \u0447\u0442\u043E\u0431\u044B \u043D\u0430\u0447\u0430\u0442\u044C \u0438\u0433\u0440\u0443
-    \u0437\u0430\u043D\u043E\u0432\u043E"
+  m_Text: 'Press "Space" to start new game
+
+'
 --- !u!222 &1034956015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1950,8 +1953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.44678125, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34.06, y: 193.53}
-  m_SizeDelta: {x: 393.1653, y: 39.3281}
+  m_AnchoredPosition: {x: 34.06, y: 136.3552}
+  m_SizeDelta: {x: 393.1653, y: 77.4329}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714652910
 MonoBehaviour:
@@ -1986,8 +1989,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0427\u0442\u043E\u0431\u044B \u0432\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F
-    \u043D\u0430\u0436\u043C\u0438\u0442\u0435 Esc"
+  m_Text: 'Press "Esc" to return
+
+'
 --- !u!222 &1714652911
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2031,8 +2035,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 549.1162, y: 221.8929}
+  m_AnchoredPosition: {x: 0, y: -90.52249}
+  m_SizeDelta: {x: 549.1162, y: 211.448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877751243
 MonoBehaviour:
@@ -2067,9 +2071,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0425\u043E\u0442\u0438\u0442\u0435 \u0432\u043A\u043B\u044E\u0447\u0438\u0442\u044C
-    \u0441\u043B\u043E\u0436\u043D\u044B\u0439 \u0440\u0435\u0436\u0438\u043C?\nY-\u0414\u0410
-    N-\u041D\u0415\u0422\n"
+  m_Text: 'Hardmode?
+
+    Y-Yes  N-No
+
+'
 --- !u!222 &1877751244
 CanvasRenderer:
   m_ObjectHideFlags: 0
