@@ -21,6 +21,7 @@ public class WinSceneC : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            PlayerPrefs.DeleteAll();
             SceneManager.LoadScene(0);
         }
     }
