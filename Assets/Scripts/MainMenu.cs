@@ -85,12 +85,12 @@ public class MainMenu : MonoBehaviour
             {
                 PlayerPrefs.SetInt("GameMode", 1);
                 PlayerPrefs.DeleteKey("SaveLvl");
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(3);
             }
             else if (Input.GetKeyDown(KeyCode.N))
             {
                 PlayerPrefs.SetInt("GameMode", 0);
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(3);
             }
         }
     }

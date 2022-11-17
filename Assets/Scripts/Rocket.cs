@@ -182,7 +182,7 @@ public class Rocket : MonoBehaviour
 
         if(HardMode == 1)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
         else
         {

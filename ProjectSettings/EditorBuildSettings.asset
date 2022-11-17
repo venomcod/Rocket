@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ChangeLang.unity
+    guid: 89fd885e12052044b9722e6d587f016a
+  - enabled: 1
     path: Assets/Scenes/MainMenuEN.unity
     guid: 502c11d631d190c4ba95c78286e91aea
+  - enabled: 1
+    path: Assets/Scenes/MainMenuRU.unity
+    guid: c3b856d60b3e2aa44b8e11a27866cd97
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
