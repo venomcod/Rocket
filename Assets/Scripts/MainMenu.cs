@@ -50,6 +50,11 @@ public class MainMenu : MonoBehaviour
                 Application.Quit();
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            PlayerPrefs.DeleteKey("Language");
+            SceneManager.LoadScene(0);
+        }
     }
 
     void HideLoadText()
