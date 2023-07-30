@@ -21,8 +21,8 @@ public class Rocket : MonoBehaviour
     [SerializeField] int lvlSave;
     int HardMode;
     bool God = false;
-    Rigidbody rigidBody; // создаём переменую для использовнание RigidBody
-    AudioSource audiosource; // создаём для audiosource
+    Rigidbody rigidBody; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ RigidBody
+    AudioSource audiosource; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ audiosource
 
     enum State { Play, Dead, Next };
     State state = State.Play;
@@ -34,8 +34,8 @@ public class Rocket : MonoBehaviour
         HardMode = PlayerPrefs.GetInt("GameMode");
         energyText.text = energy.ToString();
         state = State.Play;
-        audiosource = GetComponent<AudioSource>(); // получаем компонет из обьекта и добовляем в переменую
-        rigidBody = GetComponent<Rigidbody>(); // тож самое
+        audiosource = GetComponent<AudioSource>(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        rigidBody = GetComponent<Rigidbody>(); // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     }
 
     // Update is called once per frame
